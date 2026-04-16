@@ -1,7 +1,7 @@
 "use strict";
 
 const CONFIG = {
-  sheetsUrl: "https://script.google.com/macros/s/AKfycbztXTL5-gZU8rYmypM32IFn2rtA3Z3PSA5Q7tM98jA1ql_xNS2scbYp2PyoNPX2V2Io/exec",
+  sheetsUrl: "https://script.google.com/macros/s/AKfycbxfySPQKiUc8ThUvuvEbBVtFhjruDv4eO1yi7ka6b7weUmSMk7IO2gBLlKZYJ0CQX9E/exec",
   defaultGuestName: "Friend",
   particleCount: 24,
   loadingDelay: 520,
@@ -329,6 +329,15 @@ function buildSheetsUrl(response) {
   return url;
 }
 
+function sendSheetsBeacon(url) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = resolve;
+    img.onerror = resolve;
+    img.src = url;
+  });
+}
+
 async function submitToSheets(response) {
   if (CONFIG.sheetsUrl.includes("YOUR_DEPLOYMENT_ID")) {
     console.info("Sheets endpoint not configured yet.");
@@ -343,6 +352,12 @@ async function submitToSheets(response) {
       mode: "no-cors",
       cache: "no-store",
     });
+  } catch (error) {
+    console.warn("Fetch submit failed, retrying with image beacon.", error);
+  }
+
+  try {
+    await sendSheetsBeacon(url.toString());
   } catch (error) {
     console.warn("RSVP could not be submitted to Google Sheets.", error);
   }
