@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monica Williams 70th Birthday Invitation</title>
+  <meta
+    name="description"
+    content="A personalised digital invitation for Monica Williams' 70th birthday celebration at Cecil's Restaurant."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="birthday.css" />
+</head>
+<body>
+  <div class="site-backdrop" aria-hidden="true">
+    <div class="particles" id="particles"></div>
+  </div>
+
+  <section id="envelope-screen" class="screen active" aria-label="Envelope invitation preview">
+    <div class="envelope-stage">
+      <p class="stage-kicker">A private invitation</p>
+
+      <div class="mailpiece" id="mailpiece">
+        <div class="mailpiece__rotator">
+          <div class="mailpiece__face mailpiece__face--back" aria-label="Envelope back">
+            <div class="envelope-backside">
+              <div class="postmark-group" aria-hidden="true">
+                <span class="postmark-group__circle"></span>
+                <span class="postmark-group__lines"></span>
+              </div>
+
+              <div class="stamp-block" aria-hidden="true">
+                <img
+                  class="stamp-block__art"
+                  src="assets/images/postage-stamp.svg"
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+
+              <div class="envelope-address">
+                <p class="envelope-address__eyebrow">Delivered to</p>
+                <p class="envelope-address__name" id="envelope-guest-name">Friend</p>
+                <p class="envelope-address__note">Tap to turn the envelope</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mailpiece__face mailpiece__face--front" aria-label="Envelope front">
+            <div class="envelope-pocket" id="envelope-container">
+              <div class="envelope-letter" id="envelope-letter" aria-hidden="true">
+                <div class="mini-card">
+                  <p class="mini-card__eyebrow">Please join Nigel Scott and Family</p>
+                  <p class="mini-card__celebration">In celebrating</p>
+                  <p class="mini-card__name">Monica Williams</p>
+                  <p class="mini-card__event">70th Birthday</p>
+                </div>
+              </div>
+
+              <div class="envelope-pocket__shell"></div>
+              <div class="envelope-pocket__liner"></div>
+              <div class="envelope-pocket__fold envelope-pocket__fold--left"></div>
+              <div class="envelope-pocket__fold envelope-pocket__fold--right"></div>
+              <div class="envelope-pocket__fold envelope-pocket__fold--bottom"></div>
+              <div class="envelope-pocket__flap" id="envelope-flap"></div>
+
+              <button class="envelope-pocket__seal" id="open-envelope-button" type="button">
+                <span class="seal-ring"></span>
+                <span class="seal-label">Open</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="turn-envelope-button" id="turn-envelope-button" type="button">
+        <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+        <span id="turn-envelope-label">Turn envelope</span>
+      </button>
+
+      <p class="envelope-hint" id="envelope-hint">Start by turning the envelope over</p>
+    </div>
+  </section>
+
+  <section
+    id="card-screen"
+    class="screen"
+    aria-label="Invitation card"
+    aria-hidden="true"
+  >
+    <div class="card-screen__inner">
+      <div class="card-stage">
+        <div class="invitation-card" id="invitation-card" tabindex="-1">
+          <div class="invitation-card__rotator" id="invitation-card-rotator">
+            <article class="invitation-face invitation-face--front" aria-label="Invitation front">
+              <div class="rule-group rule-top" aria-hidden="true">
+                <span class="rule-line"></span>
+                <span class="rule-crest"></span>
+                <span class="rule-line"></span>
+              </div>
+
+              <p class="greeting" id="guest-greeting">Dear Friend,</p>
+
+              <header class="card-hero">
+                <p class="card-hero__pre">Please join Nigel Scott and Family</p>
+                <p class="card-hero__verb">In celebrating</p>
+                <h1 class="card-hero__honoree">Monica Williams</h1>
+                <p class="card-hero__milestone">70th Birthday</p>
+
+                <div class="card-hero__divider" aria-hidden="true"></div>
+
+                <div class="card-hero__details">
+                  <p class="card-hero__date">Friday, June 5th</p>
+                  <p class="card-hero__time">At 6 P.M.</p>
+                  <p class="card-hero__venue">Cecil's Restaurant</p>
+                </div>
+              </header>
+
+              <section class="front-message">
+                <p class="front-message__copy">
+                  A warm surprise celebration has been prepared in honour of a remarkable woman.
+                  Turn the card to read the full invitation and event details.
+                </p>
+              </section>
+
+              <button class="flip-card-button" id="flip-card-button" type="button">
+                <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+                <span>Turn card for full invitation</span>
+              </button>
+
+              <div class="rule-group rule-bottom" aria-hidden="true">
+                <span class="rule-line"></span>
+                <span class="rule-crest"></span>
+                <span class="rule-line"></span>
+              </div>
+            </article>
+
+            <article class="invitation-face invitation-face--back" aria-label="Invitation back">
+              <img
+                class="invitation-face__confetti invitation-face__confetti--top"
+                src="assets/images/confetti.svg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                class="invitation-face__confetti invitation-face__confetti--bottom"
+                src="assets/images/confetti (1).svg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="invitation-face__topbar">
+                <button class="flip-card-button flip-card-button--back" id="flip-card-back-button" type="button">
+                  <i class="fa-solid fa-reply" aria-hidden="true"></i>
+                  <span>Back to front</span>
+                </button>
+              </div>
+
+              <div class="rule-group rule-top" aria-hidden="true">
+                <span class="rule-line"></span>
+                <span class="rule-crest"></span>
+                <span class="rule-line"></span>
+              </div>
+
+              <section class="card-section" aria-labelledby="invite-heading">
+                <h2 class="section-heading" id="invite-heading">You’re Invited to a Special Celebration</h2>
+                <p class="section-body">
+                  You are warmly invited to join us in celebrating a very special milestone:
+                  a 70th Birthday Celebration in honor of a remarkable woman.
+                </p>
+              </section>
+
+              <section class="card-section card-section--details" aria-labelledby="details-heading">
+                <h2 class="section-heading" id="details-heading">Event details</h2>
+
+                <dl class="detail-list">
+                  <div class="detail-item">
+                    <dt class="detail-label">
+                      <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                      <span>Date</span>
+                    </dt>
+                    <dd class="detail-value">Friday, June 5, 2026</dd>
+                  </div>
+                  <div class="detail-item">
+                    <dt class="detail-label">
+                      <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                      <span>Time</span>
+                    </dt>
+                    <dd class="detail-value">6:00 PM sharp</dd>
+                  </div>
+                  <div class="detail-item">
+                    <dt class="detail-label">
+                      <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                      <span>Venue</span>
+                    </dt>
+                    <dd class="detail-value">Cecil's Restaurant</dd>
+                  </div>
+                </dl>
+              </section>
+
+              <section class="card-section card-section--note" aria-labelledby="note-heading">
+                <h2 class="section-heading" id="note-heading">A small request</h2>
+                <p class="note-text">
+                  This will be a surprise celebration, and your presence will help make the
+                  occasion truly memorable.
+                </p>
+              </section>
+
+              <section class="card-section" aria-labelledby="dress-heading">
+                <h2 class="section-heading" id="dress-heading">Dress code</h2>
+                <p class="section-body">
+                  Semi-formal attire
+                  <span class="dress-note">Kindly note: no shorts or tights</span>
+                </p>
+              </section>
+
+              <div class="rule-group" aria-hidden="true">
+                <span class="rule-line"></span>
+                <span class="rule-crest"></span>
+                <span class="rule-line"></span>
+              </div>
+
+              <section class="card-section card-section--closing" aria-labelledby="closing-heading">
+                <h2 class="section-heading" id="closing-heading">A final note</h2>
+                <p class="section-body">
+                  Your presence would mean a great deal, and we look forward to celebrating this
+                  special evening together.
+                </p>
+              </section>
+
+              <footer class="card-footer">
+                <p class="sign-off">Warm regards,</p>
+                <p class="sign-off sign-off--name">Nigel Scott &amp; Family</p>
+              </footer>
+
+              <div class="rule-group rule-bottom" aria-hidden="true">
+                <span class="rule-line"></span>
+                <span class="rule-crest"></span>
+                <span class="rule-line"></span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <section class="card-screen__actions" aria-labelledby="rsvp-heading">
+        <h2 class="section-heading" id="rsvp-heading">RSVP</h2>
+        <p class="section-body rsvp-sub">
+          Please confirm your attendance by April 30, 2026 using the buttons below.
+          If needed, you may also contact <strong>Nigel Scott</strong> privately.
+        </p>
+
+        <div class="rsvp-buttons" id="rsvp-buttons" role="group" aria-label="RSVP response">
+          <button
+            id="btn-attend"
+            class="rsvp-btn rsvp-btn--attend"
+            type="button"
+            aria-pressed="false"
+          >
+            Will attend
+          </button>
+          <button
+            id="btn-decline"
+            class="rsvp-btn rsvp-btn--decline"
+            type="button"
+            aria-pressed="false"
+          >
+            Will not attend
+          </button>
+        </div>
+
+        <div class="rsvp-confirmation" id="rsvp-confirmation" aria-live="polite" hidden>
+          <p class="rsvp-confirmation__text" id="rsvp-confirmation-text"></p>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <div class="loading-overlay" id="loading-overlay" aria-hidden="true">
+    <div class="loading-mark">MW</div>
+  </div>
+
+  <script src="birthday.js"></script>
+</body>
+</html>
