@@ -336,7 +336,11 @@ async function submitToSheets(response) {
   }
 
   try {
-   await fetch(buildSheetsUrl(response));
+    function submitToSheets(response) {
+      const url = buildSheetsUrl(response);
+      const img = new Image();
+      img.src = url;
+    }
   } catch (error) {
     console.warn("RSVP could not be submitted to Google Sheets.", error);
   }
