@@ -335,12 +335,14 @@ async function submitToSheets(response) {
     return;
   }
 
+  const url = buildSheetsUrl(response);
+
   try {
-    function submitToSheets(response) {
-      const url = buildSheetsUrl(response);
-      const img = new Image();
-      img.src = url;
-    }
+    await fetch(url.toString(), {
+      method: "GET",
+      mode: "no-cors",
+      cache: "no-store",
+    });
   } catch (error) {
     console.warn("RSVP could not be submitted to Google Sheets.", error);
   }
