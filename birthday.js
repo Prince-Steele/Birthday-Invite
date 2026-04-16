@@ -1,7 +1,7 @@
 "use strict";
 
 const CONFIG = {
-  sheetsUrl: "https://script.google.com/macros/s/AKfycbxfySPQKiUc8ThUvuvEbBVtFhjruDv4eO1yi7ka6b7weUmSMk7IO2gBLlKZYJ0CQX9E/exec",
+  sheetsUrl: "https://script.google.com/macros/s/AKfycbztXTL5-gZU8rYmypM32IFn2rtA3Z3PSA5Q7tM98jA1ql_xNS2scbYp2PyoNPX2V2Io/exec",
   defaultGuestName: "Friend",
   particleCount: 24,
   loadingDelay: 520,
