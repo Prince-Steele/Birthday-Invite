@@ -293,11 +293,24 @@ function getResponseStorageKey() {
   return `${CONFIG.storageKeyPrefix}${currentGuest.inviteId}`;
 }
 
+function getRsvpTimestamp() {
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Jamaica",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  }).format(new Date());
+}
+
 function saveLocalResponse(response) {
   try {
     const payload = JSON.stringify({
       response,
-      timestamp: new Date().toISOString(),
+      timestamp: getRsvpTimestamp(),
     });
     window.localStorage.setItem(getResponseStorageKey(), payload);
   } catch (error) {
@@ -325,7 +338,7 @@ function buildSheetsUrl(response) {
     `${window.location.origin}${window.location.pathname}?guest=${encodeURIComponent(currentGuest.slug)}&id=${encodeURIComponent(currentGuest.inviteId)}`
   );
   url.searchParams.set("response", response);
-  url.searchParams.set("timestamp", new Date().toISOString());
+  url.searchParams.set("timestamp", getRsvpTimestamp());
   return url;
 }
 
