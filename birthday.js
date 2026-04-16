@@ -336,11 +336,7 @@ async function submitToSheets(response) {
   }
 
   try {
-    await fetch(buildSheetsUrl(response), {
-      method: "GET",
-      mode: "no-cors",
-      cache: "no-store",
-    });
+   await fetch(buildSheetsUrl(response));
   } catch (error) {
     console.warn("RSVP could not be submitted to Google Sheets.", error);
   }
